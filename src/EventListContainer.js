@@ -9,10 +9,10 @@ class EventListContainer extends Component {
       })
     )}
   }
+  
   render() {
     return (
       <div className='container'>
-        {/* sep component */}
         <select ref='sortType' onChange={this.props.handleChange.bind(this)}>
           <option value='all'>All</option>
           <option value='startTime'>Sort By Start Time</option>

@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 class AddEventForm extends Component {
 
-  validateDates(startTime, endTime){
-    return Date.parse(startTime) > Date.now() && Date.parse(startTime) < Date.parse(endTime)
-  }
   render() {
     return (
       <div className='event-form'>

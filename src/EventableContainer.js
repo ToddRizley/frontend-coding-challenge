@@ -4,7 +4,9 @@ import 'whatwg-fetch';
 import EventListContainer from './EventListContainer'
 import AddEventForm from './AddEventForm'
 import SearchForm from './SearchForm'
+
 class EventableContainer extends Component {
+
   constructor(props){
     super(props)
     this.state = {
@@ -14,8 +16,6 @@ class EventableContainer extends Component {
   }
 
   searchByTitle(event){
-    event.preventDefault()
-    debugger
       var filterBy = String(event.target.value).toLowerCase()
       var length = filterBy.length
 
@@ -29,14 +29,15 @@ class EventableContainer extends Component {
       }
   }
 
-  handleSubmit(){
+  handleSubmit(event){
     event.preventDefault()
-    let startTime = this.refs.eventForm['event-start'].value
-    let endTime = this.refs.eventForm['event-end'].value
-    let title = this.refs.eventForm['event-title'].value
+    let title = event.target[0].value
+    let startTime = event.target[1].value
+    let endTime = event.target[2].value
+
     if(this.validateDates(startTime, endTime)) {
-      var eventList = this.props.eventList
-      eventList = eventList.push({title: title, start_time: startTime, end_time: endTime})
+      var eventList = this.state.eventList
+      eventList.push({title: title, start_time: startTime, end_time: endTime})
       this.setState({eventList: eventList})
     }
   }
@@ -63,20 +64,20 @@ class EventableContainer extends Component {
     return sortedList
   };
 
-  handleChange(){
-    var sortType = this.refs.sortType.value
+  handleChange(event){
+    var sortType = event.target.value
     var sortedList
     if (sortType === 'startTime'){
-      sortedList = this.props.sortByStartTime(this.props.currentListView)
+      sortedList = this.sortByStartTime(this.state.currentListView)
     } else if (sortType === 'title'){
-      sortedList = this.props.sortByTitle(this.props.currentListView)
+      sortedList = this.sortByTitle(this.state.currentListView)
     } else {
-      sortedList = this.props.eventList
+      sortedList = this.state.eventList
     }
     this.setState({currentListView: sortedList})
   }
 
-  componentDidMount(){
+  componentWillMount(){
     const APITOKEN = "Token 7761e7e3b25a1d6d315901fcd7180d971f77ea2e"
     const URL = 'https://api.eventable.com/v1/events/'
     var obj = {
@@ -94,6 +95,10 @@ class EventableContainer extends Component {
    })
  }
 
+ validateDates(startTime, endTime){
+   return Date.parse(startTime) > Date.now() && Date.parse(startTime) < Date.parse(endTime)
+ }
+
   render() {
     return (
       <div className='container'>
@@ -105,8 +110,6 @@ class EventableContainer extends Component {
           handleChange={this.handleChange.bind(this)}
           currentListView={this.state.currentListView}
           eventList={this.state.eventList}
-          sortByTitle={this.sortByTitle.bind(this)}
-          sortByStartTime={this.sortByStartTime.bind(this)}
         />
         <SearchForm
           currentListView={this.state.currentListView}
