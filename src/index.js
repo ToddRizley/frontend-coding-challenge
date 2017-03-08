@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import EventableContainer from './EventableContainer';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <EventableContainer/>,
   document.getElementById('root')
 );
