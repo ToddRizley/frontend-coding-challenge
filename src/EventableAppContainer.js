@@ -5,7 +5,7 @@ import EventListContainer from './EventListContainer'
 import AddEventForm from './AddEventForm'
 import SearchForm from './SearchForm'
 
-class EventableContainer extends Component {
+class EventableAppContainer extends Component {
 
   constructor(props){
     super(props)
@@ -14,6 +14,28 @@ class EventableContainer extends Component {
       currentListView: {}
     }
   }
+
+  sortByStartTime(events) {
+    var sortedList =  events.sort((a, b)=> {
+      return Date.parse(a.start_time) - Date.parse(b.start_time);
+    });
+    return sortedList
+  };
+
+  sortByTitle(events){
+    var sortedList = events.sort((a, b)=> {
+    var nameA = a.title.toUpperCase();
+    var nameB = b.title.toUpperCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+    });
+    return sortedList
+  };
 
   searchByTitle(event){
       var filterBy = String(event.target.value).toLowerCase()
@@ -41,28 +63,6 @@ class EventableContainer extends Component {
       this.setState({eventList: eventList})
     }
   }
-
-  sortByTitle(events){
-    var sortedList = events.sort((a, b)=> {
-    var nameA = a.title.toUpperCase();
-    var nameB = b.title.toUpperCase();
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    return 0;
-    });
-    return sortedList
-  };
-
-  sortByStartTime(events){
-    var sortedList =  events.sort((a, b)=> {
-      return Date.parse(a.start_time) - Date.parse(b.start_time);
-    });
-    return sortedList
-  };
 
   handleChange(event){
     var sortType = event.target.value
@@ -101,14 +101,10 @@ class EventableContainer extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='container col-xs-12'>
         <AddEventForm
+          className='col-xs-12'
           handleSubmit={this.handleSubmit.bind(this)}
-          eventList={this.state.eventList}
-        />
-        <EventListContainer
-          handleChange={this.handleChange.bind(this)}
-          currentListView={this.state.currentListView}
           eventList={this.state.eventList}
         />
         <SearchForm
@@ -116,9 +112,15 @@ class EventableContainer extends Component {
           eventList={this.state.eventList}
           searchByTitle={this.searchByTitle.bind(this)}
         />
+        <EventListContainer
+          className='col-xs-12'
+          handleChange={this.handleChange.bind(this)}
+          currentListView={this.state.currentListView}
+          eventList={this.state.eventList}
+        />
       </div>
     );
   }
 }
 
-export default EventableContainer;
+export default EventableAppContainer;
