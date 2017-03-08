@@ -3,14 +3,30 @@ import './App.css';
 import 'whatwg-fetch';
 import EventListContainer from './EventListContainer'
 import AddEventForm from './AddEventForm'
-
+import SearchForm from './SearchForm'
 class EventableContainer extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       eventList: {},
       currentListView: {}
     }
+  }
+
+  searchByTitle(event){
+    event.preventDefault()
+    debugger
+      var filterBy = String(event.target.value).toLowerCase()
+      var length = filterBy.length
+
+      if ( length > 0 ) {
+        var filterEvents = this.state.currentListView.filter( (event)=> {
+          return (event.title.slice(0, length).toLowerCase() === filterBy)
+          })
+        this.setState({currentListView: filterEvents})
+      } else {
+        this.setState({currentListView: this.state.eventList})
+      }
   }
 
   handleSubmit(){
@@ -21,7 +37,6 @@ class EventableContainer extends Component {
     if(this.validateDates(startTime, endTime)) {
       var eventList = this.props.eventList
       eventList = eventList.push({title: title, start_time: startTime, end_time: endTime})
-      debugger
       this.setState({eventList: eventList})
     }
   }
@@ -83,17 +98,21 @@ class EventableContainer extends Component {
     return (
       <div className='container'>
         <AddEventForm
-          handleSubmit={this.handleSubmit}
+          handleSubmit={this.handleSubmit.bind(this)}
           eventList={this.state.eventList}
         />
         <EventListContainer
-          handleChange={this.handleChange}
+          handleChange={this.handleChange.bind(this)}
           currentListView={this.state.currentListView}
           eventList={this.state.eventList}
-          sortByTitle={this.sortByTitle}
-          sortByStartTime={this.sortByStartTime}
+          sortByTitle={this.sortByTitle.bind(this)}
+          sortByStartTime={this.sortByStartTime.bind(this)}
         />
-        {/* <SearchFormComponent /> */}
+        <SearchForm
+          currentListView={this.state.currentListView}
+          eventList={this.state.eventList}
+          searchByTitle={this.searchByTitle.bind(this)}
+        />
       </div>
     );
   }
