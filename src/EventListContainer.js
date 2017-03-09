@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Event from './Event'
+import Event from './Event';
 
 class EventListContainer extends Component {
+
   displayEventList(events){
     if (Object.keys(events).length !== 0){
       return (events.map( (event)=> {
         return(<Event key={event.id} eventInfo={event} />)
-      })
-    )}
-  }
+      });
+    )};
+  };
 
   render() {
     return (
@@ -24,7 +25,7 @@ class EventListContainer extends Component {
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 export default EventListContainer;

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddEventForm/> renders correctly 1`] = `
+<div
+  className="event-form"
+>
+  <h4>
+    Add New Event
+  </h4>
+  <form
+    className="form-group row col-xs-12"
+    onSubmit={[Function]}
+  >
+    <div
+      className="col-xs-3"
+    >
+      Event Name: 
+      <input
+        className="form-control"
+        name="event-title"
+        placeholder="Add Event Title"
+        required={true}
+        type="text"
+      />
+       
+    </div>
+    <div
+      className="col-xs-3"
+    >
+      Start: 
+      <input
+        className="form-control"
+        name="event-start"
+        placeholder="Start Date/Time"
+        required={true}
+        type="datetime-local"
+      />
+       
+    </div>
+    <div
+      className="col-xs-3"
+    >
+      End: 
+      <input
+        className="form-control"
+        name="event-end"
+        placeholder="End Date/Time"
+        required={true}
+        type="datetime-local"
+      />
+        
+    </div>
+    <div
+      className="col-xs-3"
+    >
+      <input
+        type="submit"
+        value="Submit"
+      />
+    </div>
+  </form>
+</div>
+`;

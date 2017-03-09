@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'whatwg-fetch';
-import EventListContainer from './EventListContainer'
-import AddEventForm from './AddEventForm'
-import SearchForm from './SearchForm'
-import {validateDates, sortList, searchByTitle} from './utils.js'
+import EventListContainer from './EventListContainer';
+import AddEventForm from './AddEventForm';
+import SearchForm from './SearchForm';
+import {validateDates, sortList, searchByTitle} from './utils.js';
 
 class EventableAppContainer extends Component {
 
@@ -14,7 +14,7 @@ class EventableAppContainer extends Component {
       eventList: {},
       currentListView: {}
     }
-  }
+  };
 
   searchByTitle(event){
     var filterBy = String(event.target.value).toLowerCase()
@@ -28,7 +28,7 @@ class EventableAppContainer extends Component {
     } else {
       this.setState({currentListView: this.state.eventList})
     }
-  }
+  };
 
 
   handleSubmit(event){
@@ -41,22 +41,23 @@ class EventableAppContainer extends Component {
       eventList.push({title: title, start_time: startTime, end_time: endTime})
       this.setState({eventList: eventList})
     }
-  }
+  };
 
   handleChange(event){
     var sortType = event.target.value
     var sortedList = sortList(sortType, this.state.currentListView, this.state.eventList)
     this.setState({currentListView: sortedList})
-  }
+  };
 
   componentWillMount(){
     const APITOKEN = "Token 7761e7e3b25a1d6d315901fcd7180d971f77ea2e"
     const URL = 'https://api.eventable.com/v1/events/'
     var obj = {
-    method: 'GET',
-    headers: {
-      'Authorization': APITOKEN
-    } }
+      method: 'GET',
+      headers: {
+        'Authorization': APITOKEN
+      }
+    };
 
   fetch(URL, obj)
   .then( (res)=> {
@@ -64,8 +65,8 @@ class EventableAppContainer extends Component {
    })
   .then( (resJson)=> {
     this.setState({eventList: resJson['results'], currentListView: resJson['results']});
-   })
- }
+  });
+ };
 
   render() {
     return (
@@ -82,7 +83,7 @@ class EventableAppContainer extends Component {
         />
       </div>
     );
-  }
-}
+  };
+};
 
 export default EventableAppContainer;

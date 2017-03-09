@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchForm/> renders correctly 1`] = `
+<form
+  className="col-xs-6"
+>
+  <div
+    className="form-group has-feedback"
+  >
+    <label
+      className="control-label"
+    >
+      Search Events By Title
+    </label>
+    <input
+      className="form-control"
+      onChange={[Function]}
+      placeholder="Search by event title"
+      type="text"
+    />
+    <i
+      className="glyphicon glyphicon-search form-control-feedback"
+    />
+  </div>
+</form>
+`;
