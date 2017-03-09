@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Event/> renders correctly 1`] = `
+<div
+  className="row col-xs-12"
+>
+  Event One
+   | From: 
+  7:00 PM 11-24-16
+   To: 
+  9:00 PM 11-24-16
+</div>
+`;

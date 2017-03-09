@@ -9,16 +9,17 @@ class EventListContainer extends Component {
       })
     )}
   }
-  
+
   render() {
     return (
-      <div className='container'>
-        <select ref='sortType' onChange={this.props.handleChange.bind(this)}>
-          <option value='all'>All</option>
+      <div className='container col-xs-12'>
+        <h4>Sort Events</h4>
+        <select ref='sortType' className='col-xs-4'onChange={this.props.handleChange.bind(this)}>
           <option value='startTime'>Sort By Start Time</option>
           <option value='title'>Sort By Name</option>
         </select>
-        <div>
+        <div className='event-list col-xs-12'>
+          <h3 className='col-xs-6'>Event List</h3>
           {this.displayEventList(this.props.currentListView)}
         </div>
       </div>
