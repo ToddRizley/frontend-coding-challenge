@@ -2,7 +2,7 @@
 
 exports[`<AddEventForm/> renders correctly 1`] = `
 <div
-  className="event-form"
+  className="event-form row"
 >
   <h4>
     Add New Event
@@ -54,6 +54,7 @@ exports[`<AddEventForm/> renders correctly 1`] = `
       className="col-xs-3"
     >
       <input
+        id="add-event-button"
         type="submit"
         value="Submit"
       />

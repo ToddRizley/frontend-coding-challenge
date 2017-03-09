@@ -4,7 +4,7 @@ class AddEventForm extends Component {
 
   render() {
     return (
-      <div className='event-form'>
+      <div className='event-form row'>
         <h4>Add New Event</h4>
         <form className='form-group row col-xs-12' ref='eventForm' onSubmit={this.props.handleSubmit.bind(this)}>
           <div className='col-xs-3'>
@@ -17,7 +17,7 @@ class AddEventForm extends Component {
             End: <input name='event-end' className="form-control" placeholder='End Date/Time' type='datetime-local' required/>&nbsp;&nbsp;
           </div>
           <div className='col-xs-3'>
-            <input type='submit' value='Submit'/>
+            <input id='add-event-button' type='submit' value='Submit'/>
           </div>
         </form>
       </div>

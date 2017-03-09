@@ -2,7 +2,7 @@
 
 exports[`<SearchForm/> renders correctly 1`] = `
 <form
-  className="col-xs-6"
+  className="search-form col-xs-6"
 >
   <div
     className="form-group has-feedback"

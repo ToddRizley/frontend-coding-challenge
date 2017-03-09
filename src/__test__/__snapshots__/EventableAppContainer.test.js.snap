@@ -2,10 +2,10 @@
 
 exports[`<EventableAppContainer/> renders correctly 1`] = `
 <div
-  className="container col-xs-12"
+  className="col-xs-12"
 >
   <div
-    className="event-form"
+    className="event-form row"
   >
     <h4>
       Add New Event
@@ -57,6 +57,7 @@ exports[`<EventableAppContainer/> renders correctly 1`] = `
         className="col-xs-3"
       >
         <input
+          id="add-event-button"
           type="submit"
           value="Submit"
         />
@@ -64,7 +65,7 @@ exports[`<EventableAppContainer/> renders correctly 1`] = `
     </form>
   </div>
   <form
-    className="col-xs-6"
+    className="search-form col-xs-6"
   >
     <div
       className="form-group has-feedback"
@@ -86,13 +87,15 @@ exports[`<EventableAppContainer/> renders correctly 1`] = `
     </div>
   </form>
   <div
-    className="container col-xs-12"
+    className="event-sorter col-xs-6"
   >
-    <h4>
-      Sort Events
-    </h4>
+    <label
+      className="sorter-label"
+    >
+      Search Events By Title
+    </label>
     <select
-      className="col-xs-4"
+      className="col-xs-6"
       onChange={[Function]}
     >
       <option
@@ -106,6 +109,10 @@ exports[`<EventableAppContainer/> renders correctly 1`] = `
         Sort By Name
       </option>
     </select>
+  </div>
+  <div
+    className="event-list col-xs-12"
+  >
     <div
       className="event-list col-xs-12"
     >

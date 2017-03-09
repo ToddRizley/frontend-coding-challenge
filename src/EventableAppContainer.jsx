@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import 'whatwg-fetch';
 import EventListContainer from './EventListContainer';
 import AddEventForm from './AddEventForm';
 import SearchForm from './SearchForm';
-import {validateDates, sortList, searchByTitle} from './utils.js';
+import EventSorter from './EventSorter'
+import {validateDates, sortList} from './utils.js';
 
 class EventableAppContainer extends Component {
 
@@ -17,6 +17,7 @@ class EventableAppContainer extends Component {
   };
 
   searchByTitle(event){
+    event.preventDefault()
     var filterBy = String(event.target.value).toLowerCase()
     var length = filterBy.length
 
@@ -70,15 +71,17 @@ class EventableAppContainer extends Component {
 
   render() {
     return (
-      <div className='container col-xs-12'>
+      <div className='col-xs-12'>
         <AddEventForm
           handleSubmit={this.handleSubmit.bind(this)}
         />
         <SearchForm
           searchByTitle={this.searchByTitle.bind(this)}
         />
-        <EventListContainer
+        <EventSorter
           handleChange={this.handleChange.bind(this)}
+        />
+        <EventListContainer
           currentListView={this.state.currentListView}
         />
       </div>

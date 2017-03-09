@@ -4,7 +4,7 @@ export default class SearchForm extends Component {
 
   render(){
     return(
-    <form className='col-xs-6'>
+    <form className='search-form col-xs-6'>
       <div className="form-group has-feedback">
         <label className="control-label">Search Events By Title</label>
         <input

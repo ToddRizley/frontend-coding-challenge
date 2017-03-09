@@ -2,26 +2,8 @@
 
 exports[`<EventListContainer/> renders correctly 1`] = `
 <div
-  className="container col-xs-12"
+  className="event-list col-xs-12"
 >
-  <h4>
-    Sort Events
-  </h4>
-  <select
-    className="col-xs-4"
-    onChange={[Function]}
-  >
-    <option
-      value="startTime"
-    >
-      Sort By Start Time
-    </option>
-    <option
-      value="title"
-    >
-      Sort By Name
-    </option>
-  </select>
   <div
     className="event-list col-xs-12"
   >
