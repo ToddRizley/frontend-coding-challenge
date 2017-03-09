@@ -4,66 +4,6 @@ exports[`<EventableAppContainer/> renders correctly 1`] = `
 <div
   className="col-xs-12"
 >
-  <div
-    className="event-form row"
-  >
-    <h4>
-      Add New Event
-    </h4>
-    <form
-      className="form-group row col-xs-12"
-      onSubmit={[Function]}
-    >
-      <div
-        className="col-xs-3"
-      >
-        Event Name: 
-        <input
-          className="form-control"
-          name="event-title"
-          placeholder="Add Event Title"
-          required={true}
-          type="text"
-        />
-         
-      </div>
-      <div
-        className="col-xs-3"
-      >
-        Start: 
-        <input
-          className="form-control"
-          name="event-start"
-          placeholder="Start Date/Time"
-          required={true}
-          type="datetime-local"
-        />
-         
-      </div>
-      <div
-        className="col-xs-3"
-      >
-        End: 
-        <input
-          className="form-control"
-          name="event-end"
-          placeholder="End Date/Time"
-          required={true}
-          type="datetime-local"
-        />
-          
-      </div>
-      <div
-        className="col-xs-3"
-      >
-        <input
-          id="add-event-button"
-          type="submit"
-          value="Submit"
-        />
-      </div>
-    </form>
-  </div>
   <form
     className="search-form col-xs-6"
   >
@@ -122,6 +62,66 @@ exports[`<EventableAppContainer/> renders correctly 1`] = `
         Event List
       </h3>
     </div>
+  </div>
+  <div
+    className="event-form container footer navbar-fixed-bottom"
+  >
+    <h4>
+      Add New Event
+    </h4>
+    <form
+      className="form-group col-xs-12"
+      onSubmit={[Function]}
+    >
+      <div
+        className="col-xs-3"
+      >
+        Title 
+        <input
+          className="form-control"
+          name="event-title"
+          placeholder="Add Event Title"
+          required={true}
+          type="text"
+        />
+         
+      </div>
+      <div
+        className="col-xs-3"
+      >
+        Start 
+        <input
+          className="form-control"
+          name="event-start"
+          placeholder="Start Date/Time"
+          required={true}
+          type="datetime-local"
+        />
+         
+      </div>
+      <div
+        className="col-xs-3"
+      >
+        End 
+        <input
+          className="form-control"
+          name="event-end"
+          placeholder="End Date/Time"
+          required={true}
+          type="datetime-local"
+        />
+          
+      </div>
+      <div
+        className="col-xs-3"
+      >
+        <input
+          id="add-event-button"
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
   </div>
 </div>
 `;

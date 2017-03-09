@@ -4,7 +4,7 @@ import EventListContainer from './EventListContainer';
 import AddEventForm from './AddEventForm';
 import SearchForm from './SearchForm';
 import EventSorter from './EventSorter'
-import {validateDates, sortList} from './utils.js';
+import {validateDates, sortList} from '../utils.js';
 
 class EventableAppContainer extends Component {
 
@@ -72,9 +72,6 @@ class EventableAppContainer extends Component {
   render() {
     return (
       <div className='col-xs-12'>
-        <AddEventForm
-          handleSubmit={this.handleSubmit.bind(this)}
-        />
         <SearchForm
           searchByTitle={this.searchByTitle.bind(this)}
         />
@@ -83,6 +80,9 @@ class EventableAppContainer extends Component {
         />
         <EventListContainer
           currentListView={this.state.currentListView}
+        />
+        <AddEventForm
+          handleSubmit={this.handleSubmit.bind(this)}
         />
       </div>
     );

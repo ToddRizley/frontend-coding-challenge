@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { formatDate } from './utils.js';
+import { formatDate } from '../utils.js';
 
 class Event extends Component {
 

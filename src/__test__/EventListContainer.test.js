@@ -1,5 +1,5 @@
 import React from 'react';
-import EventListContainer from '../EventListContainer'
+import EventListContainer from '../components/EventListContainer'
 import renderer from 'react-test-renderer';
 
 describe('<EventListContainer/>', () => {

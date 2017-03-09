@@ -1,5 +1,5 @@
 import React from 'react';
-import EventSorter from '../EventSorter'
+import EventSorter from '../components/EventSorter'
 import renderer from 'react-test-renderer';
 
 describe('<EventSorter/>', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Event from '../Event';
+import Event from '../components/Event';
 import renderer from 'react-test-renderer';
 
 describe('<Event/>', () => {

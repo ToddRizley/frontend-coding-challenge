@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EventableAppContainer from './EventableAppContainer';
+import EventableAppContainer from './components/EventableAppContainer';
 import '../public/assets/index.css';
 
 ReactDOM.render(

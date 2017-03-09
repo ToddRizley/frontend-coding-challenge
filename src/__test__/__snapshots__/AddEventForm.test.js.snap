@@ -2,19 +2,19 @@
 
 exports[`<AddEventForm/> renders correctly 1`] = `
 <div
-  className="event-form row"
+  className="event-form container footer navbar-fixed-bottom"
 >
   <h4>
     Add New Event
   </h4>
   <form
-    className="form-group row col-xs-12"
+    className="form-group col-xs-12"
     onSubmit={[Function]}
   >
     <div
       className="col-xs-3"
     >
-      Event Name: 
+      Title 
       <input
         className="form-control"
         name="event-title"
@@ -27,7 +27,7 @@ exports[`<AddEventForm/> renders correctly 1`] = `
     <div
       className="col-xs-3"
     >
-      Start: 
+      Start 
       <input
         className="form-control"
         name="event-start"
@@ -40,7 +40,7 @@ exports[`<AddEventForm/> renders correctly 1`] = `
     <div
       className="col-xs-3"
     >
-      End: 
+      End 
       <input
         className="form-control"
         name="event-end"

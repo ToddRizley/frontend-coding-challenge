@@ -1,5 +1,5 @@
 import React from 'react';
-import EventableAppContainer from '../EventableAppContainer'
+import EventableAppContainer from '../components/EventableAppContainer'
 import renderer from 'react-test-renderer';
 
 describe('<EventableAppContainer/>', () => {

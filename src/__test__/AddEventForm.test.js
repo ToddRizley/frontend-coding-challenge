@@ -1,5 +1,5 @@
 import React from 'react';
-import AddEventForm from '../AddEventForm';
+import AddEventForm from '../components/AddEventForm';
 import renderer from 'react-test-renderer';
 
 describe('<AddEventForm/>', () => {
