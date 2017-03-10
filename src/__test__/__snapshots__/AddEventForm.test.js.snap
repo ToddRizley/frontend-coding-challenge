@@ -14,7 +14,7 @@ exports[`<AddEventForm/> renders correctly 1`] = `
     <div
       className="col-xs-3"
     >
-      Title 
+      Title
       <input
         className="form-control"
         name="event-title"
@@ -27,7 +27,7 @@ exports[`<AddEventForm/> renders correctly 1`] = `
     <div
       className="col-xs-3"
     >
-      Start 
+      Start
       <input
         className="form-control"
         name="event-start"
@@ -40,7 +40,7 @@ exports[`<AddEventForm/> renders correctly 1`] = `
     <div
       className="col-xs-3"
     >
-      End 
+      End
       <input
         className="form-control"
         name="event-end"

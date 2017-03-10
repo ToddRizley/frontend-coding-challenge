@@ -16,9 +16,9 @@ exports[`<EventListContainer/> renders correctly 1`] = `
       className="row col-xs-12"
     >
       Event One
-       | From: 
+        |  From: 
       7:00 PM 11-24-16
-       To: 
+      To: 
       9:00 PM 11-24-16
     </div>
   </div>
