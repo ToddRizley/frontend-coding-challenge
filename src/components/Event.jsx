@@ -5,7 +5,7 @@ const Event = props => (
   <div className="row col-xs-12">
     {props.eventInfo.title}&nbsp;
         |  From: {formatDate(props.eventInfo.start_time)}
-        To: {formatDate(props.eventInfo.end_time)}
+        &nbsp;To: {formatDate(props.eventInfo.end_time)}
   </div>
 );
 
