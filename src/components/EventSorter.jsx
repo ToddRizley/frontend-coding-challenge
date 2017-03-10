@@ -13,3 +13,7 @@ export default class EventSorter extends Component {
       </div>
   )};
 };
+
+EventSorter.propTypes = {
+  handleChange: React.PropTypes.func
+};

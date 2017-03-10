@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class AddEventForm extends Component {
+export default class AddEventForm extends Component {
 
   render() {
     return (
@@ -25,4 +25,6 @@ class AddEventForm extends Component {
   }
 }
 
-export default AddEventForm;
+Event.propTypes = {
+  handleSubmit: React.PropTypes.func
+};

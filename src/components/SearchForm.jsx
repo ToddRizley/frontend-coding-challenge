@@ -18,3 +18,7 @@ export default class SearchForm extends Component {
     </form>
   )};
 };
+
+SearchForm.propTypes = {
+  searchByTitle: React.PropTypes.func
+};

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Event from './Event';
 
-class EventListContainer extends Component {
+export default class EventListContainer extends Component {
 
   displayEventList(events){
     if (Object.keys(events).length !== 0){
@@ -23,4 +23,6 @@ class EventListContainer extends Component {
   };
 };
 
-export default EventListContainer;
+EventListContainer.propTypes = {
+  currentListView: React.PropTypes.object
+};

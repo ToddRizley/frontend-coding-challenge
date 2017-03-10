@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { formatDate } from '../utils.js';
 
-class Event extends Component {
+export default class Event extends Component {
 
   render() {
     return (
@@ -11,4 +11,6 @@ class Event extends Component {
   )};
 };
 
-export default Event;
+Event.propTypes = {
+  eventInfo: React.PropTypes.object
+};
