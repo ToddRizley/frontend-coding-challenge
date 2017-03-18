@@ -1,5 +1,5 @@
 
-#Eventable Front End Coding Challenge
+# Eventable Front End Coding Challenge
 
 Hi! This is a small `react` app integrating Eventable's API. The app receives JSON from an Eventable user, displays the events on that user's calendar, and then gives the user ability to add events (locally). The app is very simple and use is fairly straightforward. 
 
